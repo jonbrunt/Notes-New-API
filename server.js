@@ -7,11 +7,12 @@ const { mySecret } = require('./config');
 const { authenticate } = require('./authenticate');
 const User = require('./Schemas/user');
 const Note = require('./Schemas/note');
+const config = require('./config/config');
 
 const server = express();
 
 mongoose
-  .connect('mongodb://localhost/backend')
+  .connect(config.connectionString)
   .then(() => console.log('API connected...MongoDB connected...'))
   .catch(() => console.log('Connection to API failed'));
 
