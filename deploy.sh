@@ -117,13 +117,5 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   cd - > /dev/null
 fi
 
-# 4. Install client packages
-if [ -e "$DEPLOYMENT_TARGET/client/package.json" ]; then
-  cd "$DEPLOYMENT_TARGET/client"
-  eval $NPM_CMD install --production
-  exitWithMessageOnError "npm failed"
-  cd - > /dev/null
-fi
-
 ##################################################################################################################################
 echo "Finished successfully."
