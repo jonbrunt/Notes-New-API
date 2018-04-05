@@ -3,7 +3,6 @@ const helmet = require('helmet');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
-const { mySecret } = require('./config');
 const { authenticate } = require('./authenticate');
 const User = require('./Schemas/user');
 const Note = require('./Schemas/note');
@@ -58,7 +57,7 @@ server.post('/login', (req, res) => {
           const payload = {
             email: user.email,
           };
-          const token = jwt.sign(payload, mySecret);
+          const token = jwt.sign(payload, config.mySecret);
           res.status(201).json({ token });
         }
       });
