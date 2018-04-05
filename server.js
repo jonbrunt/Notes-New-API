@@ -19,6 +19,10 @@ server.use(express.json());
 server.use(helmet());
 server.use(cors());
 
+server.get('/', (req, res) => {
+  res.send({ API: 'running' });
+});
+
 server.delete('/deletenote', authenticate, (req, res) => {
   const id = req.get('id');
   Note.findByIdAndRemove(id)
