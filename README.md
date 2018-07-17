@@ -1,2 +1,2 @@
-# Notes-API
-API for Lambda Notes App
+# Notes API
+API for Brunt Notes App, utilizing Express.js (Heroku deployed)
