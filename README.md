@@ -1,2 +1,2 @@
 # Notes API
-API for Brunt Notes App, utilizing Express.js (Heroku deployed)
+New API for "Brunt Notes App" (also updating the app), utilizing Express.js
