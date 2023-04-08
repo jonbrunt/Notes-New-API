@@ -1,5 +1,5 @@
 {
-  "name": "operation-certain-death",
+  "name": "notes-new-api",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jonbrunt/Operation-Certain-Death.git"
+    "url": "git+https://github.com/jonbrunt/Notes-New-API.git"
   },
   "author": "Jonathan M. Brunt",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jonbrunt/Operation-Certain-Death/issues"
+    "url": "https://github.com/jonbrunt/Notes-New-API/issues"
   },
-  "homepage": "https://github.com/jonbrunt/Operation-Certain-Death#readme",
+  "homepage": "https://github.com/jonbrunt/Notes-New-API#readme",
   "dependencies": {
     "bcrypt": "^1.0.3",
     "cors": "^2.8.4",
