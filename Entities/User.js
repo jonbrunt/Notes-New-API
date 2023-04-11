@@ -33,8 +33,8 @@ module.exports = new EntitySchema({
     },
   },
   methods: {
-    checkPassword: async (rawPassword) => {
-      return bcrypt.compare(rawPassword, this.password);
+    checkPassword: async (user, rawPassword) => {
+      return bcrypt.compare(rawPassword, user.password);
     },
   },
   relations: {

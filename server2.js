@@ -14,21 +14,11 @@ server.use(express.json());
 server.use(helmet());
 server.use(cors());
 
-// createConnection({
-//   type: 'postgres',
-//   url: config.connectionString,
-//   entities: [User, Note],
-//   synchronize: true,
-//   logging: false,
-// })
-//   .then(() => console.log('API connected...PostgreSQL connected...'))
-//   .catch(() => console.log('Connection to API failed'));
-
 const AppDataSource = new DataSource({
   type: 'postgres',
   // url: config.connectionString,
   host: 'localhost',
-  port: 3306,
+  port: 5432,
   username: 'test',
   password: 'test',
   database: 'test',
@@ -39,9 +29,11 @@ const AppDataSource = new DataSource({
 
 AppDataSource.initialize()
   .then(() => {
+    /* eslint-disable-next-line no-console */
     console.log('API connected...PostgreSQL connected...');
   })
   .catch((err) => {
+    /* eslint-disable-next-line no-console */
     console.error('Connection to API failed', err);
   });
 
@@ -98,7 +90,7 @@ server.post('/login', async (req, res) => {
       return;
     }
 
-    const matched = await user.checkPassword(password);
+    const matched = await user.checkPassword(user, password);
 
     if (!matched) {
       res.status(400).json({
@@ -216,5 +208,6 @@ server.put('/updatenote', authenticate, async (req, res) => {
 
 const port = process.env.PORT || 5000;
 server.listen(port, () => {
+  /* eslint-disable-next-line no-console */
   console.log(`Server is running on ${port}`);
 });
